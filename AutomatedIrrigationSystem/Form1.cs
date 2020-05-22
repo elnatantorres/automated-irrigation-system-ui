@@ -4,6 +4,7 @@ using System;
 using System.Net.Http;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AutomatedIrrigationSystem
 {
@@ -38,7 +39,7 @@ namespace AutomatedIrrigationSystem
             {
                 dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-                dataGridView2.DataSource = GetExecution().results;
+                dataGridView2.DataSource = GetExecution().results.OrderByDescending(r => r.Id);
             }
             catch (Exception ex)
             {
@@ -59,7 +60,7 @@ namespace AutomatedIrrigationSystem
 
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            dataGridView2.DataSource = GetExecution().results;
+            dataGridView2.DataSource = GetExecution().results.OrderByDescending(r => r.Id);
         }
 
         private GetIrrigationExecution GetExecution()
