@@ -39,7 +39,7 @@ namespace AutomatedIrrigationSystem
             {
                 dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-                dataGridView2.DataSource = GetExecution().results.OrderByDescending(r => r.Id);
+                dataGridView2.DataSource = GetExecution().results.OrderByDescending(r => r.Id).ToList();
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace AutomatedIrrigationSystem
 
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            dataGridView2.DataSource = GetExecution().results.OrderByDescending(r => r.Id);
+            dataGridView2.DataSource = GetExecution().results.OrderByDescending(r => r.Id).ToList();
         }
 
         private GetIrrigationExecution GetExecution()
