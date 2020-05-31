@@ -24,7 +24,7 @@ namespace AutomatedIrrigationSystem
                 new IrrigationSystem()
                 {
                     Controller = "Arduino UNO",
-                    Id = 1,
+                    Id = 5,
                     Irrigator = "IRR-1",
                     Plantation = "Alpha",
                     Sensor = "SENS-HUM-1",
